@@ -56,11 +56,11 @@ This means that:
 
 If you run `node index.js` you should see the following:
 
-![node index.js](images/run1.png "node index.js")
+![node index.js](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/run1.png "node index.js")
 
 And if you point your browser to [`http://localhost:3000`](http://localhost:3000):
 
-![http://localhost:3000](images/result1.png "http://localhost:3000")
+![http://localhost:3000](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/result1.png "http://localhost:3000")
 
 # Serving HTML
 
@@ -101,7 +101,7 @@ Here's a simple `index.html` file to display a list of messages with some stylin
 
 If you restart the process (by hitting Control+C and running `node index.js` again) and refresh the page it should look like this:
 
-![node index.js](images/result2.png "node index.js")
+![node index.js](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/result2.png "node index.js")
 
 # Integrating MongoDB
 
@@ -114,7 +114,7 @@ Since you're here, I'm going to assume you already have access to a MongoDB clus
 
 For this example I'm going to create a `chat` database with a `messages` collection along with an initial record that I will later use to validate connectivity to the MongoDB from my client application: 
 
-![message record](images/message.png "message record")
+![message record](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/message.png "message record")
 
 ## Install dotenv
 
@@ -139,7 +139,7 @@ console.log(process.env.MONGODB_CONNECTION_STRING) // remove this after you've c
 
 If you restart the process (by hitting Control+C and running `node index.js` again) you can verify that your environment is working properly:
 
-![run2](images/run3.png "run3")
+![run2](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/run3.png "run3")
 
 
 
@@ -187,7 +187,7 @@ run().catch(console.dir);
 ```
 Restart your application and you should see the following
 
-![run4](images/run4.png "run4")
+![run4](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/run4.png "run4")
 
 ## Watching for Changes
 We want to be alerted any time a new message is inserted into the database. For the purpose of this tutorial we'll also [watch](https://www.mongodb.com/docs/drivers/node/current/usage-examples/changeStream/) for message updates. Replace the three lines of query test code in `index.js` with the following:
@@ -211,7 +211,7 @@ We want to be alerted any time a new message is inserted into the database. For 
 
 Then edit and/or insert some messages: 
 
-![run5](images/run5.png "run5")
+![run5](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/run5.png "run5")
 
 # Integrating Socket.IO
 Socket.IO is composed of two parts:
@@ -308,5 +308,5 @@ And on the client side when we capture a 'chat message' event we’ll include it
 
 And that completes our chat application, in about 80 lines of code! This is what it looks like when messages are inserted or updated in our `chat.messages` collection in MongoDB:
 
-![result-final](images/result-final.png "result-final")
+![result-final](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/result-final.png "result-final")
 
