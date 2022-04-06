@@ -1,0 +1,11 @@
+{
+    "name": "monngo-socket-chat-example",
+    "version": "0.0.1",
+    "description": "my first mongo socket.io app",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "mongodb": "4.5",
+        "socket.io": "^4.4.1"
+    }
+}
