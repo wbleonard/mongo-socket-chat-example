@@ -2,13 +2,13 @@
 
 # Introduction
 
-The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provides a nice introduction to [Socket.io](https://socket.io/). The guide bundles the server and client into a single application where messages submitted on an HTML input form are received and displayed on the page. 
+The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provides a nice introduction to [Socket.io](https://socket.io/). The guide bundles the server and client into a single application where messages submitted via an HTML input form are received and displayed on the page. 
 
-Since MongoDB supports an exception [eventing framwork](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propogate events emmitted from MongoDB through to Socket.IO. To keep thinks consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. Let's get started...
+Since MongoDB supports an exceptional [eventing framwork](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propogate events emmitted from MongoDB through to Socket.IO. To keep things consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. Let's get started...
 
 # The web framework
 
-As with the Socket.IO getting started guide, we're going to set up a simple HTML webpage, however, in our example, it's only going to display a list of messages - there will be no input form.
+As with the Socket.IO getting started guide, we're going to set up a simple HTML webpage, however, in our example, it's only going to display a list of messages -- there will be no input form.
 
 First let's create a `package.json` manifest file that describes our project. I recommend you place it in a dedicated empty directory (I'll call mine `mongo-socket-chat-example`).
 
@@ -22,7 +22,7 @@ First let's create a `package.json` manifest file that describes our project. I 
 }
 ```
 
-Then use `npm` to install `express':
+Then use `npm` to install `express`:
 ```zsh
 npm install express@4
 ```
@@ -112,13 +112,13 @@ Since you're here, I'm going to assume you already have access to a MongoDB clus
 
 ## Create the Database and Collection
 
-For this example I'm going to create a `chat` database with a `messages` collection along with an initial record that I will later use to validate connectivity to the MongoDB from my client application: 
+For this example I'm going to create a `chat` database with a `messages` collection along with an initial record that I will later use to validate connectivity to MongoDB from my client application: 
 
 ![message record](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/message.png "message record")
 
 ## Install dotenv
 
-To avoid storing MongoDB credentials in our application code, We'll use [dotenv](https://www.npmjs.com/package/dotenv) to read the MongoDB connection string from our environment. As with the `express` framework, use npm to the `dotenv`:
+To avoid storing MongoDB credentials in our application code, we'll use [dotenv](https://www.npmjs.com/package/dotenv) to read the MongoDB connection string from our environment. As with the `express` framework, use npm to install `dotenv`:
 
 ```zsh
 npm install dotenv --save
@@ -150,10 +150,6 @@ Use npm once again to install the Node.js driver:
 ```zsh
 npm install mongodb@4.5
 ```
-
-This [MongoDB Node.js Quick Start](https://www.mongodb.com/docs/drivers/node/current/quick-start/) provides an excellent introduction to incorporating MongoDB into your Node.js applications.  
-
-
 ## Connect to MongoDB
 
 Add the following code to your `index.js`:
@@ -188,6 +184,8 @@ run().catch(console.dir);
 Restart your application and you should see the following
 
 ![run4](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/run4.png "run4")
+
+For further information, this [MongoDB Node.js Quick Start](https://www.mongodb.com/docs/drivers/node/current/quick-start/) provides an excellent introduction to incorporating MongoDB into your Node.js applications.  
 
 ## Watching for Changes
 We want to be alerted any time a new message is inserted into the database. For the purpose of this tutorial we'll also [watch](https://www.mongodb.com/docs/drivers/node/current/usage-examples/changeStream/) for message updates. Replace the three lines of query test code in `index.js` with the following:
@@ -253,7 +251,7 @@ In order to send an event to everyone, Socket.IO gives us the `io.emit()` method
 io.emit('<event name>', '<event data>')
 ```
 
-So, augment the change stream with the following: 
+So, augment our change stream code with the following: 
 
 ```JavaScript
       switch (next.operationType) {
@@ -289,10 +287,7 @@ And on the client side when we capture a 'chat message' event we’ll include it
    <script src="/socket.io/socket.io.js"></script>
    <script>
        var socket = io();
-
-
        var messages = document.getElementById('messages');
-
 
        socket.on('chat message', function(msg) {
            var item = document.createElement('li');
@@ -306,7 +301,7 @@ And on the client side when we capture a 'chat message' event we’ll include it
 ```
 
 
-And that completes our chat application, in about 80 lines of code! This is what it looks like when messages are inserted or updated in our `chat.messages` collection in MongoDB:
+And that completes our chat application, in about 80 lines of code! This is what it looks like on the web client when messages are inserted or updated in our `chat.messages` collection in MongoDB:
 
 ![result-final](https://github.com/wbleonard/monngo-socket-chat-example/blob/main/images/result-final.png "result-final")
 
