@@ -4,7 +4,11 @@
 
 The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provides a nice introduction to [Socket.io](https://socket.io/). The guide bundles the server and client into a single application where messages submitted via an HTML input form are received and displayed on the page. 
 
-Since MongoDB supports an exceptional [eventing framwork](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propogate events emmitted from MongoDB through to Socket.IO. To keep things consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. Let's get started...
+Since MongoDB supports an exceptional [eventing framwork](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propogate events emmitted from MongoDB through to Socket.IO. To keep things consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. 
+
+![architecture](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/architecture.png "architecture")
+
+Let's get started...
 
 # The web framework
 
