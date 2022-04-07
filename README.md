@@ -1,6 +1,6 @@
 # Integrating MongoDB Change Streams with Socket.IO
 
-# Introduction
+## Introduction
 
 The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provides a nice introduction to [Socket.io](https://socket.io/). The guide bundles the server and client into a single application where messages submitted via an HTML input form are received and displayed on the page. 
 
@@ -10,7 +10,7 @@ Since MongoDB supports an exceptional [eventing framwork](https://www.mongodb.co
 
 Let's get started...
 
-# The web framework
+## The web framework
 
 As with the Socket.IO getting started guide, we're going to set up a simple HTML webpage, however, in our example, it's only going to display a list of messages -- there will be no input form.
 
@@ -66,7 +66,7 @@ And if you point your browser to [`http://localhost:3000`](http://localhost:3000
 
 ![result1](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result1.png "result1")
 
-# Serving HTML
+## Serving HTML
 
 So far in `index.js` we are calling `res.send` and passing it a string of HTML. Our code would look very confusing if we just placed our entire application’s HTML there, so instead we're going to create an `index.html` file and serve that instead.
 
