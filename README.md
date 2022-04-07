@@ -107,7 +107,7 @@ If you restart the process (by hitting Control+C and running `node index.js` aga
 
 ![node index.js](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result2.png "node index.js")
 
-# Integrating MongoDB
+## Integrating MongoDB
 
 Since you're here, I'm going to assume you already have access to a MongoDB cluster. If you do not, just follow these [Create a MongoDB Cluster](https://www.mongodb.com/docs/drivers/node/current/quick-start/#create-a-mongodb-cluster) instructions.
 
@@ -215,7 +215,7 @@ Then edit and/or insert some messages:
 
 ![run5](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run5.png "run5")
 
-# Integrating Socket.IO
+## Integrating Socket.IO
 Socket.IO is composed of two parts:
 
 
