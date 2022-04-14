@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provides a nice introduction to [Socket.io](https://socket.io/). The guide bundles the server and client into a single application where messages submitted via an HTML input form are received and displayed on the page. 
+The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provides a nice introduction to [Socket.IO](https://socket.io/). The guide bundles the server and client into a single application where messages submitted via an HTML input form are received and displayed on the page. 
 
-Since MongoDB supports an exceptional [eventing framwork](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propogate events emmitted from MongoDB through to Socket.IO. To keep things consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. 
+Since MongoDB supports an exceptional [eventing framework](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propagate events emitted from MongoDB through to Socket.IO. To keep things consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. 
 
 ![architecture](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/architecture.png "architecture")
 
@@ -12,7 +12,7 @@ Let's get started...
 
 ## The web framework
 
-As with the Socket.IO getting started guide, we're going to set up a simple HTML webpage, however, in our example, it's only going to display a list of messages -- there will be no input form.
+As with the Socket.IO Getting Started guide, we're going to set up a simple HTML webpage, however, in our example, it's only going to display a list of messages -- there will be no input form.
 
 First let's create a `package.json` manifest file that describes our project. I recommend you place it in a dedicated empty directory (I'll call mine `mongo-socket-chat-example`).
 
@@ -56,7 +56,7 @@ This means that:
 
 * Express initializes `app` to be a function handler that you can supply to an HTTP server (as seen in line 4).
 * We define a route handler / that gets called when we hit our website home.
-* We make the http server listen on port 3000.
+* We make the HTTP server listen on port 3000.
 
 If you run `node index.js` you should see the following:
 
@@ -68,7 +68,7 @@ And if you point your browser to [`http://localhost:3000`](http://localhost:3000
 
 ## Serving HTML
 
-So far in `index.js` we are calling `res.send` and passing it a string of HTML. Our code would look very confusing if we just placed our entire application’s HTML there, so instead we're going to create an `index.html` file and serve that instead.
+So far in `index.js` we are calling `res.send` and passing it a string of HTML. Our code would look very confusing if we just placed our entire application’s HTML there, so  we're going to create an `index.html` file and serve that instead.
 
 Let’s refactor our route handler to use `sendFile` instead.
 
