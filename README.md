@@ -6,7 +6,7 @@ The [Socket.IO Getting Started guide](https://socket.io/get-started/chat) provid
 
 Since MongoDB supports an exceptional [eventing framework](https://www.mongodb.com/docs/manual/changeStreams/) of its own, this tutorial will demonstrate how to propagate events emitted from MongoDB through to Socket.IO. To keep things consistent, I will try to mirror the Socket.IO Getting Started guide as much as possible. 
 
-![architecture](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/architecture.png "architecture")
+![Architecture](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/architecture.png)
 
 Let's get started...
 
@@ -60,11 +60,11 @@ This means that:
 
 If you run `node index.js` you should see the following:
 
-![node index.js](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run1.png "node index.js")
+![Running the Web Framework](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run1.png)
 
 And if you point your browser to [`http://localhost:3000`](http://localhost:3000):
 
-![result1](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result1.png "result1")
+![Hello World](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result1.png)
 
 ## Serving HTML
 
@@ -105,7 +105,7 @@ Here's a simple `index.html` file to display a list of messages with some stylin
 
 If you restart the process (by hitting Control+C and running `node index.js` again) and refresh the page it should look like this:
 
-![node index.js](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result2.png "node index.js")
+![Hello World Refactored](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result2.png)
 
 ## Integrating MongoDB
 
@@ -118,7 +118,7 @@ Since you're here, I'm going to assume you already have access to a MongoDB clus
 
 For this example I'm going to create a `chat` database with a `messages` collection along with an initial record that I will later use to validate connectivity to MongoDB from my client application: 
 
-![message record](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/message.png "message record")
+![Initial Chat Message](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/message.png)
 
 ## Install dotenv
 
@@ -143,7 +143,7 @@ console.log(process.env.MONGODB_CONNECTION_STRING) // remove this after you've c
 
 If you restart the process (by hitting Control+C and running `node index.js` again) you can verify that your environment is working properly:
 
-![run2](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run3.png "run3")
+![Server Connection to MongoDB](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run3.png)
 
 
 
@@ -187,7 +187,7 @@ run().catch(console.dir);
 ```
 Restart your application and you should see the following
 
-![run4](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run4.png "run4")
+![MongoDB Connection Validation](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run4.png)
 
 For further information, this [MongoDB Node.js Quick Start](https://www.mongodb.com/docs/drivers/node/current/quick-start/) provides an excellent introduction to incorporating MongoDB into your Node.js applications.  
 
@@ -213,7 +213,7 @@ We want to be alerted any time a new message is inserted into the database. For 
 
 Then edit and/or insert some messages: 
 
-![run5](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run5.png "run5")
+![Change Stream Success](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/run5.png)
 
 ## Integrating Socket.IO
 Socket.IO is composed of two parts:
@@ -307,5 +307,5 @@ And on the client side when we capture a 'chat message' event we’ll include it
 
 And that completes our chat application, in about 80 lines of code! This is what it looks like on the web client when messages are inserted or updated in our `chat.messages` collection in MongoDB:
 
-![result-final](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result-final.png "result-final")
+![Final Result](https://raw.githubusercontent.com/wbleonard/mongo-socket-chat-example/main/images/result-final.png)
 
